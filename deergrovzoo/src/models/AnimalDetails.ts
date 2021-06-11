@@ -5,6 +5,9 @@ export class AnimalDetails {
     public latinName: string,
     public yearOfBirth: number,
     public longDescription: string,
-    public image: string
+    public imageUrl: string,
+    public medicine: string,
+    public isFed: boolean,
+    public lastFed: string
   ) {}
 }
