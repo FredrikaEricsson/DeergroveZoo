@@ -7,6 +7,6 @@ export class Animal {
 
     public imageUrl: string,
 
-    public lastFed: string
+    public lastFed: Date
   ) {}
 }
