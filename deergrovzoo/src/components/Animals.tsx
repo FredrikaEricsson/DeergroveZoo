@@ -14,6 +14,7 @@ export const Animals = () => {
         .get<Animal[]>("https://animals.azurewebsites.net/api/animals")
         .then((response) => {
           setAnimals(response.data);
+
           localStorage.setItem("storedAnimals", JSON.stringify(response.data));
         });
     } else {
@@ -24,14 +25,15 @@ export const Animals = () => {
 
   let liTags = animals.map((animal) => {
     return (
-      <li key={animal.id}>
-        <img src={animal.imageUrl} width="300px" alt="" />
+      <li className="animalItem" key={animal.id}>
+        <img src={animal.imageUrl} alt="" />
         <h4>{animal.name}</h4>
         <p>{animal.shortDescription}</p>
+
         <Link to={"/animal/" + animal.id}>Läs mer</Link>
       </li>
     );
   });
 
-  return <ul>{liTags}</ul>;
+  return <ul className="animalList">{liTags}</ul>;
 };

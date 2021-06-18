@@ -64,8 +64,6 @@ export const Animal = () => {
     let lastFeedingTime = moment(animal.lastFed);
     let nextFeedingTime = moment(lastFeedingTime).add(3, "hour");
 
-    console.log(currentTime);
-
     if (nextFeedingTime.isBefore(currentTime)) {
       let hungryAnimal: AnimalDetails = {
         ...animal,
@@ -75,21 +73,23 @@ export const Animal = () => {
 
       setAnimal(hungryAnimal);
     }
-  }, []);
+  }, [animalId]);
 
   return (
-    <div>
+    <div className="animalInfo">
       <h2>{animal.name}</h2>
       <img src={animal.imageUrl} width="300px" alt="/" />
       <ul>
+        <li className="longDescription">{animal.longDescription}</li>
         <li>Latin: {animal.latinName}</li>
         <li>Född: {animal.yearOfBirth}</li>
+
         <li>Medicin: {animal.medicine}</li>
+        <li>Matad: {animal.isFed === true ? "Ja" : "Nej"}</li>
         <li>
           Senast matad: {animal.lastFed.toLocaleDateString()} <span></span>
           {animal.lastFed.toLocaleTimeString()}
         </li>
-        <li>{animal.isFed.toString()}</li>
       </ul>
       <button
         onClick={feedAnimal}

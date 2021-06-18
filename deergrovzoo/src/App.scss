@@ -1,0 +1,32 @@
+.animalList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .animalItem {
+    list-style: none;
+    width: 27%;
+    margin: 3%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.animalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    .longDescription {
+      margin: 3% 0%;
+    }
+    li {
+      list-style: none;
+    }
+  }
+}

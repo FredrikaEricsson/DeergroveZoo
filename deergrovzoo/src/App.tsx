@@ -3,7 +3,7 @@ import { Animals } from "./components/Animals";
 import { Animal } from "./components/Animal";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
